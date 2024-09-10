@@ -50,4 +50,4 @@ print(f"结果是否等于0: {result == 0}")
 '''
 4.输出pi is roughly 3.14
 '''
-print(f"pi is roughly {pi:.10f}")
+print(f"pi is roughly {pi:.2f}")
