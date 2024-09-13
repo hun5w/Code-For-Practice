@@ -20,16 +20,19 @@ int compare(const void *a, const void *b) {
 
 int main() {
     int T;
+    printf("请输入测试用例的个数T:\n");
     scanf("%d", &T);
     while (T--) {
         int n, k;
+        printf("请输入n和k(用空格分割):\n");
         scanf("%d %d", &n, &k);
-        int x[n];
+        int *x = (int*)malloc(n * sizeof(int)); //动态分配数组
+        printf("请输入%d个X坐标(一行一个):\n", n);
         for (int i = 0; i < n; i++) {
             scanf("%d", &x[i]);
         }
 
-        qsort(x, n, sizeof(int), compare);
+        qsort(x, n, sizeof(int), compare); //对x数组进行排序
 
         long long count = 0;
         int j = 0;
@@ -40,7 +43,8 @@ int main() {
             count += (j - i - 1);
         }
 
-        printf("%lld\n", count);
+        printf("满足条件的对数为:%lld\n", count);
+        free(x); //释放内存
     }
     return 0;
 }

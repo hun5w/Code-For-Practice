@@ -28,8 +28,10 @@ int canPlaceCows(int positions[], int n, int cows, int minDist) {
 
 int main() {
     int n, x;
+    printf("请输入隔间数N和牛数X(用空格分割):\n");
     scanf("%d %d", &n, &x);
     int positions[n];
+    printf("请输入%d个隔间的位置(一行一个):\n", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &positions[i]);
     }
@@ -49,6 +51,6 @@ int main() {
         }
     }
 
-    printf("%d\n", result);
+    printf("最大的最小距离是:%d\n", result);
     return 0;
 }
