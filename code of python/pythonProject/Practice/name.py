@@ -8,3 +8,7 @@ print(name.title())
 
 name = "Ada"
 print(name.title())
+
+'''
+title(),是将字符串中的每个单词的首字母大写
+'''
