@@ -111,13 +111,3 @@ void symmetricDifference(int A[], int B[], int n, int m) {
     freeHashTable(hashB);
 }
 
-int main() {
-    int A[] = {1, 2, 3, 4, 5};
-    int B[] = {4, 5, 6, 7, 8};
-    int n = sizeof(A) / sizeof(A[0]);
-    int m = sizeof(B) / sizeof(B[0]);
-
-    symmetricDifference(A, B, n, m);
-
-    return 0;
-}
