@@ -3,6 +3,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
 # 生成符合N(1, 10)分布的随机数
 x = np.random.normal(1, 10**(1/2), 1000)
 
