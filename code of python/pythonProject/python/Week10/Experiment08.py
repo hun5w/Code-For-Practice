@@ -9,7 +9,7 @@ def repeat_print(string, times):
     for _ in range(times):
         print(string)
 
-repeat_print("wjj", 10)
+repeat_print("0223935", 10)
 
 # 3. 定义一个函数，分解小于10000的正整数的各位数字，并返回元组
 def split_digits(number):
@@ -18,7 +18,7 @@ def split_digits(number):
     else:
         return "Number must be less than 10000"
 
-number = 1234
+number = 2024
 digits = split_digits(number)
 print(f"数字 {number} 的各位数字为：{digits}")
 
