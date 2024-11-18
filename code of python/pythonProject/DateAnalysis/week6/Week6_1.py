@@ -1,17 +1,29 @@
-def hello_1(greeting, name):
-    print('{}, {}!'.format(greeting, name))
+y=iter([1,2,3,4,5])
+print(next(y))
+print(next(y))
+print(next(y))
+print(next(y))
+print(next(y))
+print(next(y))
+# StopIteration
 
-hello_1(greeting = 'Hello',name ='world')
-hello_1(name = 'world', greeting ='Hello')
+class MyIterator:
+    def __init__(self, data):
+        self.data = data
+        self.index = 0
 
-def print_params(*params):
-    print(params)
+    def __iter__(self):
+        return self
 
-print_params('Testing')
-print_params(1, 2, 3)
+    def __next__(self):
+        if self.index < len(self.data):
+            result = self.data[self.index]
+            self.index += 1
+            return result
+        else:
+            raise StopIteration  # 没有更多元素时抛出 StopIteration 异常
 
-def prepare_for_party(main_gift, *gifts):
-    print('The main gift is:', main_gift)
-    print('The other gifts are:', gifts)
-
-prepare_for_party('cake', 'candles', 'presents', 'music')
+# 使用这个迭代器
+my_iter = MyIterator([1, 2, 3, 4])
+for item in my_iter:
+    print(item)
