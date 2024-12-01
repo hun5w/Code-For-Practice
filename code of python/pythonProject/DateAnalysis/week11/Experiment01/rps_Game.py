@@ -1,6 +1,7 @@
 import random
 
 
+
 def get_robot_choice():
     return random.choice(["石头", "剪刀", "布"])
 
@@ -22,6 +23,12 @@ def main():
 
     while player_score < 2 and robot_score < 2:
         player_choice = input("请输入您的选择（石头/剪刀/布）：")
+
+        # 检查用户输入是否合法
+        if player_choice not in ["石头", "剪刀", "布"]:
+            print("输入无效，请输入'石头'、'剪刀'或'布'")
+            continue
+
         robot_choice = get_robot_choice()
         print(f"机器人选择了：{robot_choice}")
 
