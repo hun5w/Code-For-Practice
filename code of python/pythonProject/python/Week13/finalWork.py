@@ -1,6 +1,9 @@
 import random
 import pandas as pd
 
+
+#1.（1）	随机生成各个学院各个专业各个班级的学生，数据保存到excel文件中（文件处理，异常处理，基本语法）；
+
 # 定义学院、专业
 colleges = ["会计", "金融", "马列", "外语", "人文", "旅游", "软件", "信息", "工商", "财税",
             "国贸", "经济", "统计", "数学", "体育", "测绘"]
@@ -65,3 +68,42 @@ df = pd.DataFrame(students)
 df.to_excel("students_data.xlsx", index=False)
 
 print("学生数据已成功生成并保存到Excel文件")
+
+#2.（2）	每个专业随机生成课程数量为20门，其中必须包括：高数一、线性代数、英语一、马克思原理，其他课程为专业课16门。考虑到专业不同，课程名用学院、专业名，课程名代替：比如：“软件专业1课程1”表示一门专业课。
+
+# 每个专业课程数量
+total_courses_per_major = 20
+
+# 固定课程
+fixed_courses = ["高数一", "线性代数", "英语一", "马克思原理"]
+
+# 随机生成课程函数
+def generate_courses(college, major):
+    courses = fixed_courses.copy()  # 先加入固定课程
+    # 生成16门随机课程
+    for i in range(1, 17):
+        course_name = f"{college}{major}课程{i}"
+        courses.append(course_name)
+    random.shuffle(courses)  # 打乱课程顺序
+    return courses[:total_courses_per_major]  # 保证20门课程
+
+# 生成课程数据
+courses_data = []
+for college in colleges:
+    for major in majors[college]:
+        courses = generate_courses(college, major)
+        for course in courses:
+            courses_data.append({
+                "学院": college,
+                "专业": major,
+                "课程": course
+            })
+
+# 将课程数据保存到DataFrame
+df_courses = pd.DataFrame(courses_data)
+
+# 保存到Excel文件
+df_courses.to_excel("courses_data.xlsx", index=False)
+
+print("课程数据已成功生成并保存到Excel文件")
+
