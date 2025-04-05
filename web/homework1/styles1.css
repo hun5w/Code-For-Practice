@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #d0d0d0);
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.calculator input {
+    grid-column: span 4; 
+    height: 50px;
+    text-align: right;
+    font-size: 1.5em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.calculator button {
+    height: 50px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.calculator button:hover {
+    background-color: #d0d0d0;
+}
+
+.calculator button:active {
+    background-color: #c0c0c0;
+    transform: scale(0.95);
+}
+
+/* 数字按钮 */
+.number {
+    background-color: #4caf50;
+    color: white;
+}
+
+.number:hover {
+    background: linear-gradient(135deg, #66bb6a, #43a047);
+}
+
+.number:active {
+    background: linear-gradient(135deg, #388e3c, #2e7d32);
+}
+
+/* 操作符按钮 */
+.operator {
+    background-color: #ff9800;
+    color: white;
+}
+
+.operator:hover {
+    background: linear-gradient(135deg, #ffa726, #fb8c00);
+}
+
+.operator:active {
+    background: linear-gradient(135deg, #f57c00, #ef6c00);
+}
+
+/* 等号按钮 */
+.equal {
+    background-color: #2196f3;
+    color: white;
+}
+
+.equal:hover {
+    background: linear-gradient(135deg, #42a5f5, #1e88e5);
+}
+
+.equal:active {
+    background: linear-gradient(135deg, #1976d2, #1565c0);
+}
+
+/* 清除按钮 */
+.clear {
+    grid-column: span 3;
+    background-color: #f44336;
+    color: white;
+}
+
+.clear:hover {
+    background: linear-gradient(135deg, #ef5350, #e53935);
+}
+
+.clear:active {
+    background: linear-gradient(135deg, #d32f2f, #c62828);
+}
+
+/* 零按钮 */
+.zero {
+    grid-column: span 2;
+    background-color: #9e9e9e;
+    color: white;
+}
+
+.zero:hover {
+    background: linear-gradient(135deg, #bdbdbd, #757575);
+}
+
+.zero:active {
+    background: linear-gradient(135deg, #616161, #424242);
+}

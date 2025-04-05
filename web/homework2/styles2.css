@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.carousel {
+    position: relative;
+    width: 600px; /* 容器宽度 */
+    height: 300px; /* 容器高度 */
+    overflow: hidden; /* 隐藏溢出的部分 */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-images {
+    display: flex; /* 使用 flex 布局排列图片 */
+    transition: transform 0.5s ease-in-out; /* 平滑过渡效果 */
+    width: calc(600px * 5);
+}
+
+.carousel-images img {
+    width: 600px; /* 确保每张图片的宽度与容器一致 */
+    height: 300px; /* 确保每张图片的高度与容器一致 */
+    object-fit: cover; /* 确保图片按比例填充 */
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10; /* 确保按钮在图片上方 */
+}
+
+.carousel-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.carousel-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10; /* 确保圆点在图片上方 */
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+}
